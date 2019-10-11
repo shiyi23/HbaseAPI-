@@ -1,0 +1,29 @@
+<configuration>
+    <!-- 指定HDFS(namenode)的通信地址 -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://master:9000/</value>
+        <description>HDFS的URI，文件系统://namenode标识:端口号</description>
+    </property>
+    <!-- 指定hadoop运行时产生文件的存储路径 -->
+   <property>
+       <name>hadoop.tmp.dir</name>
+       <value>/usr/local/hadoop-2.6.0-cdh5.5.1/tmp</value>
+       <description>namenode上本地的hadoop临时文件夹</description>
+   </property>
+
+
+   <property>
+   <name>fs.trash.interval</name>
+   <!-- 以下是在指定回收站回收文件保留最长时间阀值 20160是14天，即3*24*60 -->
+   <value>20160</value>
+   <description>Number of minutes between trash checkpoints.
+  If zero, the trash feature is disabled. </description>
+   </property>
+<!--
+    <property>
+        <name>hadoop.proxyuser.hadoop.hosts</name>
+        <value>master</value>
+    </property>
+-->
+</configuration>
